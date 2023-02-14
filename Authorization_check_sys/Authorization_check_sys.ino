@@ -8,13 +8,13 @@
 const byte ROWS = 4;
 const byte COLS = 4;
 char keys[ROWS][COLS] = {
-  { '1', '2', '3', 'A' },
-  { '4', '5', '6', 'B' },
-  { '7', '8', '9', 'C' },
-  { '*', '0', '#', 'D' }
+  { '1', '2', '3' },
+  { '4', '5', '6' },
+  { '7', '8', '9' },
+  { '*', '0', '#' }
 };
 byte rowPins[ROWS] = { 2, 3, 4, 5 };
-byte colPins[COLS] = { 6, 7, 8, 9 };
+byte colPins[COLS] = { 6, 7, 8 };  // Not use column 4
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 
 LiquidCrystal lcd(A0, A1, A2, A3, A4, A5);  // Define LCD
@@ -218,6 +218,7 @@ void countDown() {
   lcd.setCursor(2, 0);
   lcd.println("GET IN WITHIN:");
   digitalWrite(greenLED, LOW);
+  delay(300);
   // 2
   digitalWrite(greenLED, HIGH);
   lcd.setCursor(2, 0);
@@ -229,6 +230,7 @@ void countDown() {
   lcd.setCursor(2, 0);
   lcd.println("GET IN WITHIN:");
   digitalWrite(greenLED, LOW);
+  delay(300);
   // 3
   digitalWrite(greenLED, HIGH);
   lcd.setCursor(2, 0);
@@ -240,6 +242,7 @@ void countDown() {
   lcd.setCursor(2, 0);
   lcd.println("GET IN WITHIN:");
   digitalWrite(greenLED, LOW);
+  delay(300);
   // 4
   digitalWrite(greenLED, HIGH);
   lcd.setCursor(2, 0);
@@ -251,6 +254,7 @@ void countDown() {
   lcd.setCursor(2, 0);
   lcd.println("GET IN WITHIN:");
   digitalWrite(greenLED, LOW);
+  delay(300);
   // 5
   digitalWrite(greenLED, HIGH);
   lcd.setCursor(4, 1);
@@ -260,6 +264,7 @@ void countDown() {
   lcd.setCursor(2, 0);
   lcd.println("GET IN WITHIN::");
   digitalWrite(greenLED, LOW);
+  delay(300);
   // 6
   digitalWrite(greenLED, HIGH);
   delay(40);
